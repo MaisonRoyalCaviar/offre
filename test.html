@@ -1,0 +1,1698 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Royal Caviar — L'Offre Événementielle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+ --or:       #C4A76B;
+ --or-lt:    #DFC48E;
+ --or-dk:    #8B6D35;
+ --noir:     #080808;
+ --noir2:    #111111;
+ --noir3:    #191919;
+ --noir4:    #222222;
+ --creme:    #F2EBD9;
+ --creme2:   #E8DEC8;
+ --silver:   #9A9080;
+ --muted:    #625A4E;
+ --blanc:    #FDFAF4;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background:var(–noir);
+color:var(–creme);
+font-family:‘Raleway’,sans-serif;
+font-weight:300;
+overflow-x:hidden;
+cursor:default;
+}
+
+/* GRAIN */
+body::after{
+content:’’;
+position:fixed;inset:0;
+background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘200’ height=‘200’%3E%3Cfilter id=‘g’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.85’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘200’ height=‘200’ filter=‘url(%23g)’ opacity=‘0.03’/%3E%3C/svg%3E”);
+pointer-events:none;z-index:9000;
+}
+
+/* ══ NAV ══ */
+nav{
+position:fixed;top:0;left:0;right:0;z-index:500;
+padding:20px 60px;
+display:flex;align-items:center;justify-content:space-between;
+background:linear-gradient(to bottom,rgba(8,8,8,.96) 0%,transparent 100%);
+transition:background .4s;
+}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-wordmark{
+font-family:‘Cormorant Garamond’,serif;
+font-size:13px;letter-spacing:.45em;
+text-transform:uppercase;color:var(–creme);
+font-weight:400;
+}
+.nav-logo img{height:50px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+font-size:10px;letter-spacing:.45em;text-transform:uppercase;
+color:var(–silver);text-decoration:none;
+transition:color .3s;
+}
+.nav-links a:hover{color:var(–or-lt)}
+.nav-cta{
+font-size:10px;letter-spacing:.35em;text-transform:uppercase;
+border:1px solid rgba(196,167,107,.4);
+color:var(–or-lt);padding:10px 22px;text-decoration:none;
+transition:all .3s;
+}
+.nav-cta:hover{background:var(–or);color:var(–noir);border-color:var(–or)}
+
+/* ══ HERO ══ */
+.hero{
+min-height:auto;
+position:relative;
+display:flex;align-items:flex-end;
+padding:140px 60px 80px;
+overflow:hidden;
+}
+.hero-bg{
+position:absolute;inset:0;
+background:linear-gradient(160deg, #0D0A05 0%, #1C1508 40%, #080808 100%);
+}
+.hero-bg::after{
+content:’’;position:absolute;inset:0;
+background:
+radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196,167,107,.04) 0%, transparent 70%);
+}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-pill{
+display:inline-flex;align-items:center;gap:10px;
+border:1px solid rgba(196,167,107,.3);
+padding:8px 18px;margin-bottom:40px;
+font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(–or-lt);
+opacity:1;
+}
+
+.hero-pill-dot{width:5px;height:5px;border-radius:50%;background:var(–or);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-title{
+font-family:‘Cormorant Garamond’,serif;
+font-size:clamp(64px,9vw,130px);
+font-weight:300;line-height:.88;
+letter-spacing:-.02em;
+opacity:1;
+}
+
+.hero-title em{font-style:italic;color:var(–or-lt);display:block}
+.hero-sub{
+margin-top:40px;
+font-size:12px;font-weight:300;letter-spacing:.28em;
+text-transform:uppercase;color:var(–silver);
+line-height:2;
+opacity:1;
+}
+
+.hero-actions{
+margin-top:48px;display:flex;gap:16px;align-items:center;
+opacity:1;
+}
+
+.btn-gold{
+font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+background:var(–or);color:var(–noir);
+padding:16px 32px;text-decoration:none;font-weight:500;
+transition:background .3s;display:inline-block;
+}
+.btn-gold:hover{background:var(–or-lt)}
+.btn-outline{
+font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+border:1px solid rgba(196,167,107,.4);color:var(–or-lt);
+padding:16px 32px;text-decoration:none;
+transition:all .3s;display:inline-block;
+}
+.btn-outline:hover{background:rgba(196,167,107,.08)}
+
+.hero-badge{
+position:absolute;right:60px;bottom:100px;z-index:2;
+width:120px;height:120px;border-radius:50%;
+border:1px solid rgba(196,167,107,.3);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;gap:4px;
+animation:spin 20s linear infinite;
+}
+.hero-badge-inner{
+font-family:‘Cormorant Garamond’,serif;
+font-size:11px;letter-spacing:.1em;color:var(–or-lt);
+line-height:1.4;
+}
+.hero-badge span{font-size:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ══ UTILS ══ */
+.label{
+font-size:9px;letter-spacing:.6em;text-transform:uppercase;
+color:var(–or);display:flex;align-items:center;gap:14px;
+margin-bottom:20px;
+}
+.label::before{content:’’;width:28px;height:1px;background:var(–or)}
+
+h2.t{
+font-family:‘Cormorant Garamond’,serif;
+font-weight:300;font-size:clamp(36px,5vw,62px);
+line-height:1.05;margin-bottom:24px;
+}
+h2.t em{font-style:italic;color:var(–or-lt)}
+
+.body{font-size:13.5px;line-height:2;color:var(–silver);max-width:540px}
+
+hr.gold{
+border:none;height:1px;
+background:linear-gradient(to right,transparent,rgba(196,167,107,.3),transparent);
+}
+
+/* ══ CONCEPT ══ */
+.concept{
+display:grid;grid-template-columns:1fr 1fr;
+gap:80px;align-items:center;
+max-width:1160px;margin:0 auto;
+padding:120px 60px;
+}
+.concept-img-wrap{position:relative}
+.concept-img{
+width:100%;height:580px;object-fit:cover;
+display:block;
+filter:brightness(.88) saturate(.85);
+}
+.concept-img-frame{
+position:absolute;inset:-14px -14px 14px 14px;
+border:1px solid rgba(196,167,107,.18);
+pointer-events:none;z-index:-1;
+}
+.concept-quote{
+margin-top:36px;
+padding:24px 28px;
+border-left:2px solid var(–or);
+background:rgba(196,167,107,.04);
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;font-size:20px;
+line-height:1.55;color:var(–creme2);
+}
+
+/* ══ EXPERIENCE BAND ══ */
+.band{
+position:relative;
+height:220px;overflow:hidden;
+background:linear-gradient(135deg, #0E0C07 0%, #161208 40%, #0A0905 100%);
+display:flex;align-items:center;justify-content:center;
+}
+.band::before{
+content:’’;
+position:absolute;inset:0;
+background:radial-gradient(ellipse 60% 80% at 50% 50%, rgba(196,167,107,.07), transparent);
+}
+.band::after-line{display:none}
+.band-overlay{
+position:relative;z-index:2;
+display:flex;align-items:center;justify-content:center;
+width:100%;
+border-top:1px solid rgba(196,167,107,.12);
+border-bottom:1px solid rgba(196,167,107,.12);
+padding:40px;
+}
+.band-txt{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:clamp(28px,3.5vw,46px);
+font-weight:300;text-align:center;
+line-height:1.35;padding:0 40px;
+}
+.band-txt span{color:var(–or-lt)}
+
+/* ══ NEUVIC ══ */
+.neuvic{
+max-width:1160px;margin:0 auto;
+padding:100px 60px;
+display:grid;grid-template-columns:1fr 1fr;
+gap:80px;align-items:center;
+}
+.neuvic-right{}
+.neuvic-badge-big{
+display:inline-flex;align-items:center;gap:16px;
+border:1px solid rgba(196,167,107,.25);
+padding:20px 28px;margin-bottom:36px;
+}
+.neuvic-badge-big .nb-icon{font-size:28px}
+.neuvic-badge-big .nb-text{
+font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+color:var(–or-lt);line-height:1.8;
+}
+.neuvic-badge-big .nb-text strong{
+display:block;font-family:‘Cormorant Garamond’,serif;
+font-size:18px;letter-spacing:.05em;color:var(–creme);font-weight:300;
+}
+
+.caviar-cards{
+display:flex;flex-direction:column;gap:2px;margin-top:40px;
+}
+.cav-card{
+display:flex;align-items:stretch;
+border:1px solid rgba(196,167,107,.12);
+transition:border-color .3s,background .3s;
+cursor:default;
+}
+.cav-card:hover{background:rgba(196,167,107,.04);border-color:rgba(196,167,107,.3)}
+.cav-card-accent{
+width:3px;flex-shrink:0;
+background:var(–or-dk);
+transition:background .3s;
+}
+.cav-card:hover .cav-card-accent{background:var(–or)}
+.cav-card-body{padding:22px 26px;flex:1}
+.cav-card-name{
+font-family:‘Cormorant Garamond’,serif;
+font-size:22px;font-weight:300;margin-bottom:6px;
+}
+.cav-card-latin{
+font-size:10px;letter-spacing:.2em;font-style:italic;
+color:var(–or);text-transform:uppercase;margin-bottom:10px;
+}
+.cav-card-desc{font-size:12px;line-height:1.8;color:var(–muted)}
+.cav-card-stars{display:flex;gap:4px;margin-top:10px}
+.star{font-size:9px;color:var(–or-dk)}
+.star.on{color:var(–or)}
+
+/* ══ SUPPORTS ══ */
+.supports-section{
+background:var(–noir2);
+padding:100px 60px;
+}
+.supports-inner{max-width:1160px;margin:0 auto}
+.supports-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:2px;margin-top:56px;
+background:rgba(196,167,107,.1);
+}
+.sup{
+background:var(–noir3);
+padding:48px 40px;
+position:relative;overflow:hidden;
+transition:background .35s;
+}
+.sup:hover{background:#141209}
+.sup::before{
+content:’’;
+position:absolute;top:0;left:0;right:0;height:2px;
+background:linear-gradient(to right,transparent,var(–or),transparent);
+transform:scaleX(0);transition:transform .5s ease;
+}
+.sup:hover::before{transform:scaleX(1)}
+.sup-num{
+font-family:‘Cormorant Garamond’,serif;
+font-size:80px;font-weight:500;
+color:rgba(196,167,107,.06);
+position:absolute;top:12px;right:24px;
+line-height:1;transition:color .35s;
+}
+.sup:hover .sup-num{color:rgba(196,167,107,.13)}
+.sup-emoji{font-size:28px;margin-bottom:18px;display:block}
+.sup-name{
+font-family:‘Cormorant Garamond’,serif;
+font-size:26px;font-weight:300;margin-bottom:14px;line-height:1.2;
+}
+.sup-desc{font-size:12.5px;line-height:1.9;color:var(–muted)}
+
+/* EXCLUSIVITE BADGE */
+.excl{
+margin-top:16px;
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(196,167,107,.1);
+border:1px solid rgba(196,167,107,.3);
+padding:6px 14px;
+}
+.excl-txt{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(–or-lt)}
+
+/* ══ CEINTURE FEATURE ══ */
+.belt-section{
+max-width:1160px;margin:0 auto;
+padding:100px 60px;
+display:grid;grid-template-columns:1fr 1fr;
+gap:80px;align-items:center;
+}
+.belt-visual{
+background:var(–noir3);
+border:1px solid rgba(196,167,107,.15);
+height:460px;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+gap:24px;position:relative;
+overflow:hidden;
+}
+.belt-visual::before{
+content:’’;
+position:absolute;inset:0;
+background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(196,167,107,.05), transparent);
+}
+.belt-svg{width:180px;opacity:.85}
+.belt-caption{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;font-size:18px;
+color:var(–creme2);text-align:center;
+padding:0 30px;line-height:1.5;
+}
+.belt-tags{
+display:flex;flex-wrap:wrap;gap:8px;
+justify-content:center;padding:0 20px;
+}
+.btag{
+font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+border:1px solid rgba(196,167,107,.25);
+color:var(–or-lt);padding:5px 12px;
+}
+
+/* ══ TENUES ══ */
+.tenues-section{
+background:var(–noir2);padding:100px 60px;
+}
+.tenues-inner{max-width:1160px;margin:0 auto}
+.tenues-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:2px;margin-top:56px;
+background:rgba(196,167,107,.1);
+}
+.tenue{
+background:var(–noir3);
+padding:40px 32px;
+text-align:center;
+transition:background .3s;
+}
+.tenue:hover{background:#141209}
+.tenue-swatch{
+width:56px;height:56px;border-radius:50%;
+margin:0 auto 20px;
+border:2px solid rgba(196,167,107,.2);
+transition:border-color .3s;
+}
+.tenue:hover .tenue-swatch{border-color:var(–or)}
+.tenue-name{
+font-family:‘Cormorant Garamond’,serif;
+font-size:20px;font-weight:300;margin-bottom:10px;
+}
+.tenue-desc{font-size:11.5px;line-height:1.8;color:var(–muted)}
+
+/* ══ BOITES ══ */
+.boites-section{max-width:1160px;margin:0 auto;padding:0 60px 100px}
+.boites-card{
+border:1px solid rgba(196,167,107,.2);
+background:linear-gradient(135deg,#0D0C07,#131108);
+display:grid;grid-template-columns:1.1fr 1fr;
+gap:60px;align-items:center;
+padding:72px 80px;
+position:relative;overflow:hidden;
+}
+.boites-card::after{
+content:’’;position:absolute;
+top:-80px;right:-80px;
+width:320px;height:320px;
+background:radial-gradient(circle,rgba(196,167,107,.07),transparent 70%);
+border-radius:50%;pointer-events:none;
+}
+.boites-label{
+font-size:9px;letter-spacing:.6em;text-transform:uppercase;
+color:var(–or);margin-bottom:16px;
+}
+.boites-title{
+font-family:‘Cormorant Garamond’,serif;
+font-size:clamp(40px,5vw,62px);font-weight:300;
+line-height:.95;margin-bottom:24px;
+}
+.boites-title em{font-style:italic;color:var(–or-lt)}
+.boites-desc{font-size:13px;line-height:2;color:var(–silver);margin-bottom:32px}
+.boites-specs{display:flex;flex-direction:column;gap:20px}
+.spec{display:flex;align-items:center;gap:18px}
+.spec-box{
+width:48px;height:48px;flex-shrink:0;
+border:1px solid rgba(196,167,107,.25);
+display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.spec-text strong{
+display:block;font-size:13px;font-weight:500;
+color:var(–creme);letter-spacing:.04em;margin-bottom:3px;
+}
+.spec-text span{font-size:11.5px;color:var(–muted)}
+
+/* ══ CUSTOM ══ */
+.custom-section{
+background:var(–noir2);padding:100px 60px;
+}
+.custom-inner{max-width:1160px;margin:0 auto}
+.custom-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:2px;margin-top:56px;
+background:rgba(196,167,107,.1);
+}
+.col{background:var(–noir3);padding:48px 40px}
+.col-h{
+font-family:‘Cormorant Garamond’,serif;
+font-size:24px;font-weight:300;
+color:var(–or-lt);
+padding-bottom:20px;margin-bottom:8px;
+border-bottom:1px solid rgba(196,167,107,.15);
+}
+.opt{
+display:flex;align-items:flex-start;gap:14px;
+padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);
+}
+.opt:last-child{border-bottom:none}
+.bull{
+width:16px;height:16px;border-radius:50%;
+border:1px solid rgba(196,167,107,.4);
+flex-shrink:0;margin-top:2px;
+display:flex;align-items:center;justify-content:center;
+}
+.bull::after{content:’’;width:6px;height:6px;border-radius:50%;background:var(–or)}
+.opt-t{font-size:12.5px;line-height:1.75;color:var(–silver)}
+
+/* ══ EVENEMENTS ══ */
+.events-section{max-width:1160px;margin:0 auto;padding:100px 60px}
+.events-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:16px;margin-top:56px;
+}
+.ev{
+position:relative;height:280px;overflow:hidden;
+border:1px solid rgba(196,167,107,.12);
+border-left:2px solid rgba(196,167,107,.25);
+transition:border-color .3s, border-left-color .3s;
+}
+.ev:hover{border-color:rgba(196,167,107,.4);border-left-color:var(–or)}
+.ev-bg{
+position:absolute;inset:0;
+background:linear-gradient(135deg, #141008 0%, #1A1510 50%, #0E0C08 100%);
+transition:background .4s;
+}
+.ev:hover .ev-bg{background:linear-gradient(135deg, #1C1610 0%, #221A0E 50%, #141008 100%)}
+.ev-content{
+position:absolute;inset:0;
+display:flex;flex-direction:column;
+justify-content:flex-end;padding:32px;
+background:linear-gradient(to top, rgba(8,8,8,.6) 0%, transparent 60%);
+}
+.ev-icon{font-size:28px;margin-bottom:12px}
+.ev-name{
+font-family:‘Cormorant Garamond’,serif;
+font-size:24px;font-weight:300;margin-bottom:8px;
+}
+.ev-desc{font-size:11.5px;line-height:1.7;color:var(–silver)}
+
+/* ══ PROCESS ══ */
+.process-section{
+background:var(–noir2);padding:100px 60px;
+}
+.process-inner{max-width:1160px;margin:0 auto}
+.process-row{
+display:grid;grid-template-columns:repeat(5,1fr);
+margin-top:60px;position:relative;
+}
+.process-row::before{
+content:’’;
+position:absolute;top:21px;left:10%;right:10%;height:1px;
+background:linear-gradient(to right,transparent,rgba(196,167,107,.35),transparent);
+}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px}
+.step-ring{
+width:42px;height:42px;border-radius:50%;
+border:1px solid var(–or);background:var(–noir2);
+display:flex;align-items:center;justify-content:center;
+font-family:‘Cormorant Garamond’,serif;
+font-size:16px;color:var(–or);
+margin-bottom:20px;position:relative;z-index:1;
+}
+.step-lbl{font-size:11px;line-height:1.7;color:var(–silver)}
+
+/* ══ FOOTER CTA ══ */
+.footer-cta{
+padding:100px 60px;
+text-align:center;
+background:
+radial-gradient(ellipse 70% 50% at 50% 50%, rgba(196,167,107,.07) 0%, transparent 70%),
+var(–noir);
+}
+.footer-cta .ft{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;
+font-size:clamp(32px,4vw,54px);
+font-weight:300;
+line-height:1.2;margin-bottom:12px;
+}
+.footer-cta .ft span{color:var(–or-lt)}
+.footer-cta .ft-sub{
+font-size:13px;color:var(–silver);margin-bottom:48px;
+}
+.footer-contacts{
+display:flex;justify-content:center;
+gap:60px;flex-wrap:wrap;margin-top:48px;
+}
+.fc{display:flex;flex-direction:column;gap:7px}
+.fc-lbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(–muted)}
+.fc-val{font-size:14px;color:var(–or-lt);text-decoration:none;letter-spacing:.04em}
+
+.footer-bot{
+background:var(–noir2);
+border-top:1px solid rgba(196,167,107,.12);
+padding:36px 60px;
+display:flex;align-items:center;justify-content:space-between;
+flex-wrap:wrap;gap:20px;
+}
+.footer-bot img{height:40px;width:auto;opacity:.8}
+.footer-bot p{font-size:10px;letter-spacing:.2em;color:var(–muted)}
+
+/* ══ SCROLL REVEAL ══ */
+.r{opacity:1;transform:none;transition:opacity .8s ease,transform .8s ease}
+.r.hidden{opacity:0;transform:translateY(32px)}
+.r.in{opacity:1;transform:none}
+.r-d1{transition-delay:.1s}
+.r-d2{transition-delay:.2s}
+.r-d3{transition-delay:.3s}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(28px)}
+to{opacity:1;transform:none}
+}
+
+/* ══ MOBILE NAV BOTTOM BAR ══ */
+.mob-bar{display:none}
+
+/* ══ RESPONSIVE TABLET ══ */
+@media(max-width:1024px){
+.concept,.neuvic,.belt-section{gap:48px;padding:80px 40px}
+.supports-grid{grid-template-columns:repeat(2,1fr)}
+.tenues-grid{grid-template-columns:repeat(2,1fr)}
+.events-grid{grid-template-columns:repeat(2,1fr)}
+.process-row{grid-template-columns:repeat(3,1fr);gap:24px}
+.process-row::before{display:none}
+}
+
+/* ══ RESPONSIVE MOBILE — PREMIUM ══ */
+@media(max-width:700px){
+
+/* ── RESET & BASE ── */
+*{-webkit-tap-highlight-color:transparent}
+body{
+padding-bottom:80px;
+font-size:14px;
+-webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV TOP ── */
+nav{
+padding:12px 20px;
+background:rgba(8,8,8,.98);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(196,167,107,.08);
+}
+.nav-links,.nav-cta{display:none}
+.nav-logo img{height:38px}
+
+/* ── BOTTOM NAV BAR — style app premium ── */
+.mob-bar{
+display:flex;
+position:fixed;bottom:0;left:0;right:0;z-index:600;
+background:rgba(8,8,8,.97);
+border-top:1px solid rgba(196,167,107,.2);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+padding-bottom:env(safe-area-inset-bottom);
+}
+.mob-bar a{
+flex:1;display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+gap:4px;padding:10px 2px 12px;
+text-decoration:none;
+font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;
+color:var(–muted);
+transition:color .25s;
+position:relative;
+}
+.mob-bar a::before{
+content:’’;
+position:absolute;top:0;left:20%;right:20%;
+height:1px;
+background:var(–or);
+transform:scaleX(0);
+transition:transform .3s ease;
+}
+.mob-bar a.active::before{transform:scaleX(1)}
+.mob-bar a.active{color:var(–or-lt)}
+.mob-bar .mb-icon{font-size:20px;line-height:1}
+.mob-bar a.cta-mob{
+background:linear-gradient(135deg,var(–or-dk),var(–or));
+color:var(–noir);
+flex:none;width:64px;
+font-size:7px;font-weight:600;
+letter-spacing:.15em;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+gap:3px;padding:10px 4px 12px;
+text-decoration:none;
+}
+.mob-bar a.cta-mob .mb-icon{font-size:18px}
+
+/* ── HERO ── */
+.hero{
+min-height:auto;
+padding:100px 24px 80px;
+align-items:flex-start;
+text-align:left;
+justify-content:flex-start;
+flex-direction:column;
+}
+.hero-bg{
+background:linear-gradient(160deg, #0D0A05 0%, #1C1508 40%, #080808 100%) !important;
+filter:none !important;
+}
+.hero-bg::after{ display:none; }
+.hero-content{
+max-width:100%;
+padding:0;
+opacity:1!important;
+visibility:visible!important;
+transform:none!important;
+position:relative;
+z-index:2;
+}
+.hero-pill{
+font-size:7.5px;letter-spacing:.35em;
+padding:7px 14px;margin-bottom:24px;
+}
+.hero-title{
+font-size:clamp(56px,16vw,88px);
+line-height:.88;
+letter-spacing:-.02em;
+}
+.hero-sub{
+font-size:10px;letter-spacing:.2em;
+margin-top:20px;line-height:2.2;
+}
+.hero-actions{
+flex-direction:column;
+gap:10px;margin-top:32px;
+}
+.btn-gold{
+width:100%;text-align:center;
+padding:18px 20px;font-size:10px;
+letter-spacing:.35em;
+}
+.btn-outline{
+width:100%;text-align:center;
+padding:16px 20px;font-size:10px;
+letter-spacing:.3em;
+}
+.hero-badge{display:none}
+
+/* ── LABELS & TITRES ── */
+.label{
+font-size:8px;letter-spacing:.5em;
+margin-bottom:14px;
+}
+h2.t{
+font-size:clamp(32px,9.5vw,46px);
+line-height:1.02;margin-bottom:20px;
+}
+.body{
+font-size:13.5px;line-height:2;
+max-width:100%;color:var(–silver);
+}
+hr.gold{margin:0}
+
+/* ── CONCEPT ── */
+.concept{
+grid-template-columns:1fr;
+gap:0;padding:0;
+}
+.concept-img-wrap{order:-1;position:relative}
+.concept-img{
+height:72vw;max-height:340px;
+width:100%;object-fit:cover;object-position:top center;
+filter:brightness(.9) saturate(.85);
+display:block;
+}
+/* Dégradé de fondu bas de l’image vers le fond */
+.concept-img-wrap::after{
+content:’’;
+position:absolute;bottom:0;left:0;right:0;
+height:80px;
+background:linear-gradient(to bottom,transparent,var(–noir));
+}
+.concept-img-frame{display:none}
+.concept > div:last-child{
+padding:36px 24px 56px;
+}
+.concept-quote{
+font-size:16px;padding:16px 18px;
+margin-top:28px;line-height:1.6;
+}
+
+/* ── BAND ── */
+.band{
+height:auto;
+padding:0;
+}
+.band-overlay{
+padding:36px 24px;
+border-top:1px solid rgba(196,167,107,.12);
+border-bottom:1px solid rgba(196,167,107,.12);
+}
+.band-txt{
+font-size:clamp(18px,5vw,24px);
+padding:0;line-height:1.6;
+}
+
+/* ── CAVIAR NEUVIC ── */
+.neuvic{
+grid-template-columns:1fr;
+gap:0;padding:56px 24px;
+}
+.neuvic-badge-big{
+padding:14px 16px;gap:12px;
+width:100%;margin-bottom:28px;
+}
+.neuvic-badge-big .nb-text strong{font-size:16px}
+.caviar-cards{gap:2px;margin-top:24px}
+.cav-card{border-left:none}
+.cav-card-accent{width:3px}
+.cav-card-body{padding:20px 20px}
+.cav-card-name{font-size:21px}
+.cav-card-latin{font-size:9.5px}
+.cav-card-desc{font-size:12.5px;line-height:1.85}
+
+/* ── SUPPORTS ── */
+.supports-section{padding:56px 0}
+.supports-inner{padding:0 24px}
+/* Scroll horizontal sur mobile */
+.supports-grid{
+display:flex;flex-wrap:nowrap;
+overflow-x:auto;
+gap:2px;margin-top:32px;
+background:transparent;
+padding:0 24px 4px;
+margin-left:-24px;margin-right:-24px;
+scrollbar-width:none;-ms-overflow-style:none;
+}
+.supports-grid::-webkit-scrollbar{display:none}
+.sup{
+flex:0 0 240px;
+padding:32px 26px;
+background:var(–noir3);
+}
+.sup-num{font-size:52px;top:10px;right:14px}
+.sup-name{font-size:21px}
+.sup-desc{font-size:12.5px}
+/* Scroll hint fade on right */
+.supports-inner{position:relative}
+.supports-inner::after{
+content:’’;
+position:absolute;right:0;top:0;bottom:0;
+width:40px;
+background:linear-gradient(to right,transparent,var(–noir2));
+pointer-events:none;
+}
+
+/* ── TENUES ── */
+.tenues-section{padding:56px 0}
+.tenues-inner{padding:0 24px}
+.tenues-inner .label,
+.tenues-inner h2.t,
+.tenues-inner .body{padding-right:0}
+.tenues-grid{
+display:flex;flex-wrap:nowrap;
+overflow-x:auto;
+gap:2px;margin-top:32px;
+background:transparent;
+padding:0 24px 4px;
+margin-left:-24px;margin-right:-24px;
+scrollbar-width:none;-ms-overflow-style:none;
+}
+.tenues-grid::-webkit-scrollbar{display:none}
+.tenue{
+flex:0 0 190px;
+padding:32px 22px;
+background:var(–noir3);
+}
+.tenue-swatch{width:48px;height:48px;margin-bottom:16px}
+.tenue-name{font-size:18px;margin-bottom:8px}
+.tenue-desc{font-size:11.5px;line-height:1.75}
+.tenues-note{padding:0 24px;margin-top:20px;font-size:12px}
+
+/* ── CEINTURE ── */
+.belt-section{
+grid-template-columns:1fr;
+gap:0;padding:0;
+}
+.belt-visual{
+height:260px;
+border-left:none;border-right:none;
+}
+.belt-svg{width:140px}
+.belt-caption{font-size:15px;padding:0 24px}
+.belt-section > div:last-child{padding:36px 24px 56px}
+.btag{font-size:8.5px;padding:5px 10px}
+
+/* ── BOÎTES COLLECTOR ── */
+.boites-section{padding:0 24px 56px}
+.boites-card{
+grid-template-columns:1fr;
+gap:32px;padding:36px 28px;
+}
+.boites-label{font-size:8.5px;margin-bottom:12px}
+.boites-title{
+font-size:clamp(38px,11vw,52px);
+line-height:.92;margin-bottom:18px;
+}
+.boites-desc{font-size:13px;margin-bottom:24px}
+.boites-specs{gap:18px}
+.spec-box{width:44px;height:44px;font-size:16px}
+.spec-text strong{font-size:13px}
+.spec-text span{font-size:11.5px}
+
+/* ── SUR-MESURE (accordéon) ── */
+.custom-section{padding:56px 24px}
+.custom-grid{
+grid-template-columns:1fr;gap:0;
+background:transparent;
+margin-top:32px;
+}
+.col{
+padding:0;background:transparent;
+border-bottom:1px solid rgba(196,167,107,.12);
+}
+.col-h{
+padding:22px 0;margin-bottom:0;
+border-bottom:none;cursor:pointer;
+display:flex;justify-content:space-between;align-items:center;
+font-size:19px;
+}
+.col-h::after{
+content:‘＋’;font-family:sans-serif;
+font-size:20px;color:var(–or);font-weight:200;
+flex-shrink:0;margin-left:12px;
+}
+.col.open .col-h::after{content:’－’}
+.col-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.col.open .col-body{max-height:700px}
+.col-body-inner{padding-bottom:20px}
+.opt{padding:13px 0}
+.opt-t{font-size:13px;line-height:1.75}
+
+/* ── ÉVÉNEMENTS ── */
+.events-section{padding:56px 0}
+.events-section .label,
+.events-section h2.t{padding:0 24px}
+.events-grid{
+display:flex;flex-wrap:nowrap;
+overflow-x:auto;
+gap:10px;margin-top:32px;
+background:transparent;
+padding:0 24px 4px;
+scrollbar-width:none;-ms-overflow-style:none;
+}
+.events-grid::-webkit-scrollbar{display:none}
+.ev{flex:0 0 220px;height:280px}
+.ev-name{font-size:21px}
+.ev-desc{font-size:11.5px}
+.ev-icon{font-size:24px;margin-bottom:8px}
+
+/* ── PROCESS (timeline verticale) ── */
+.process-section{padding:56px 24px}
+.process-row{
+grid-template-columns:1fr;
+gap:0;margin-top:40px;position:relative;
+}
+.process-row::before{
+display:block;
+position:absolute;
+top:21px;bottom:21px;left:20px;
+width:1px;height:auto;
+background:linear-gradient(to bottom,
+transparent,
+rgba(196,167,107,.4) 10%,
+rgba(196,167,107,.4) 90%,
+transparent);
+}
+.step{
+flex-direction:row;text-align:left;
+align-items:flex-start;
+gap:20px;padding:0 0 36px 0;
+}
+.step:last-child{padding-bottom:0}
+.step-ring{
+flex-shrink:0;margin-bottom:0;
+background:var(–noir2);
+position:relative;z-index:1;
+width:42px;height:42px;font-size:15px;
+}
+.step-lbl{padding-top:11px;font-size:13px;line-height:1.7}
+
+/* ── FOOTER CTA ── */
+.footer-cta{
+padding:64px 24px 56px;
+text-align:left;
+}
+.footer-cta img{margin:0 0 24px!important}
+.footer-cta .ft{
+font-size:clamp(28px,8vw,40px);
+text-align:left;
+}
+.footer-cta .ft-sub{
+font-size:13px;margin-bottom:36px;
+text-align:left;
+}
+.footer-cta > div{
+flex-direction:column;width:100%;gap:10px;
+justify-content:flex-start!important;
+}
+.footer-cta .btn-gold,
+.footer-cta .btn-outline{
+width:100%;text-align:center;
+padding:18px 20px;
+}
+.footer-contacts{
+flex-direction:column;align-items:flex-start;
+gap:24px;margin-top:40px;
+}
+.fc-lbl{font-size:8.5px;letter-spacing:.4em}
+.fc-val{font-size:15px}
+
+/* ── FOOTER BOT ── */
+.footer-bot{
+padding:22px 24px;flex-direction:column;
+text-align:center;gap:12px;
+}
+.footer-bot img{height:34px}
+.footer-bot p{font-size:9px;letter-spacing:.15em}
+}
+
+/* ══ CONCEPT CSS VISUAL (remplace image) ══ */
+.concept-css-visual{
+width:100%;height:520px;
+background:
+radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,167,107,.08) 0%, transparent 70%),
+linear-gradient(135deg, #0D0B07 0%, #1A1508 40%, #0A0905 100%);
+border:1px solid rgba(196,167,107,.15);
+display:flex;align-items:center;justify-content:center;
+position:relative;overflow:hidden;
+}
+.concept-css-visual::before{
+content:’’;
+position:absolute;
+top:50%;left:50%;
+transform:translate(-50%,-50%);
+width:300px;height:300px;
+border-radius:50%;
+border:1px solid rgba(196,167,107,.08);
+}
+.concept-css-visual::after{
+content:’’;
+position:absolute;
+top:50%;left:50%;
+transform:translate(-50%,-50%);
+width:200px;height:200px;
+border-radius:50%;
+border:1px solid rgba(196,167,107,.12);
+}
+.concept-css-inner{
+display:flex;flex-direction:column;
+align-items:center;gap:24px;
+position:relative;z-index:2;
+text-align:center;padding:20px;
+}
+.concept-css-txt{
+font-family:‘Cormorant Garamond’,serif;
+font-style:italic;font-size:18px;
+color:rgba(196,167,107,.7);
+letter-spacing:.05em;
+}
+.concept-css-dots{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:10px;margin-top:8px;
+}
+.concept-css-dots span{
+width:8px;height:8px;border-radius:50%;
+background:rgba(196,167,107,.25);
+display:block;
+animation:caviarPulse 2s ease-in-out infinite;
+}
+.concept-css-dots span:nth-child(2){animation-delay:.2s}
+.concept-css-dots span:nth-child(3){animation-delay:.4s}
+.concept-css-dots span:nth-child(4){animation-delay:.6s}
+.concept-css-dots span:nth-child(5){animation-delay:.8s;background:rgba(196,167,107,.5)}
+.concept-css-dots span:nth-child(6){animation-delay:1s}
+.concept-css-dots span:nth-child(7){animation-delay:1.2s}
+.concept-css-dots span:nth-child(8){animation-delay:1.4s}
+.concept-css-dots span:nth-child(9){animation-delay:1.6s}
+@keyframes caviarPulse{
+0%,100%{opacity:.25;transform:scale(1)}
+50%{opacity:.8;transform:scale(1.3)}
+}
+@media(max-width:700px){
+.concept-css-visual{height:260px}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+
+<nav>
+<a class="nav-logo" href="https://www.maisonroyalcaviar.com" target="_blank">
+<img src="https://static.wixstatic.com/media/97c303_ba998fe0f4c74ebaac3f10e5ed73355c~mv2.jpg/v1/crop/x_0,y_39,w_1180,h_1277/fill/w_120,h_130,al_c,q_85,enc_avif,quality_auto/Logo%20Maison%20Royal%20Caviar%20%C3%A9crit_edited_jp.jpg" alt="Maison Royal Caviar">
+</a>
+<ul class="nav-links">
+<li><a href="#concept">Le Concept</a></li>
+<li><a href="#caviar">Notre Caviar</a></li>
+<li><a href="#supports">Les Supports</a></li>
+<li><a href="#personnalisation">Sur-mesure</a></li>
+</ul>
+<a class="nav-cta" href="tel:+33775788348">Nous contacter</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content" style="padding-top:90px;opacity:1;visibility:visible;">
+<div class="hero-pill">
+<span class="hero-pill-dot"></span>
+     Présentation exclusive · Maison Royal Caviar
+</div>
+<h1 class="hero-title">
+     L'art du<br>
+<em>caviar</em><br>
+     en mouvement
+</h1>
+<p class="hero-sub">
+     Private Parties · Weddings · Yacht Parties<br>
+     Galas · Corporate & Brand Events
+</p>
+<div class="hero-actions">
+<a class="btn-gold" href="tel:+33775788348">Réserver votre expérience</a>
+<a class="btn-outline" href="#concept">Découvrir l'offre</a>
+</div>
+</div>
+<div class="hero-badge">
+<div class="hero-badge-inner">
+<span>👑</span>
+     Paris<br>& International
+</div>
+</div>
+</section>
+
+<!-- ══ CONCEPT ══ -->
+
+<div id="concept" class="concept r">
+<div class="concept-img-wrap">
+<img class="concept-img"
+     src="" style="display:none"
+     alt="Caviar Girl Maison Royal Caviar - service événement prestige">
+<div class="concept-img-frame"></div>
+</div>
+<div>
+<p class="label">Notre concept</p>
+<h2 class="t">Le service<br>vivant,<br><em>en mouvement</em></h2>
+<p class="body">
+     Maison Royal Caviar réinvente la dégustation de caviar en la rendant mobile et vivante. Nos Caviar Girls &amp; Boys portent autour de leur taille une <strong style="color:var(--creme);font-weight:400">ceinture de cuir créée sur mesure</strong>, équipée de tous les accessoires nécessaires pour servir avec élégance.
+</p>
+<p class="body" style="margin-top:18px">
+     Ils se déplacent au cœur de vos événements, au plus près de vos invités — transformant chaque service en un spectacle visuel raffiné. Ce n'est pas simplement du traiteur : c'est une <strong style="color:var(--creme);font-weight:400">expérience gastronomique immersive</strong>.
+</p>
+<blockquote class="concept-quote" style="margin-top:36px">
+     « Le raffinement devient spectacle, la dégustation devient souvenir. »
+</blockquote>
+</div>
+</div>
+
+<hr class="gold">
+
+<!-- ══ BAND ══ -->
+
+<div class="band">
+
+<div class="band-overlay">
+<p class="band-txt">
+     Paris · Saint-Tropez · Monaco · Los Angeles · Dubaï<br>
+<span>Partout où le luxe se célèbre</span>
+</p>
+</div>
+</div>
+
+<!-- ══ CAVIAR DE NEUVIC ══ -->
+
+<div id="caviar" class="neuvic r">
+<div>
+<p class="label">Notre sélection</p>
+<h2 class="t">Un caviar<br>d'exception,<br><em>signé Neuvic</em></h2>
+<p class="body">
+     Notre partenariat privilégié avec <strong style="color:var(--creme);font-weight:400">Caviar de Neuvic</strong> — maison française de référence mondiale, certifiée bio, dont les esturgeons sont élevés dans les eaux pures de la Dordogne — nous permet de proposer un caviar vivant, frais, d'une qualité incomparable.
+</p>
+<p class="body" style="margin-top:16px">
+     Cela dit, <strong style="color:var(--creme);font-weight:400">l'expérience est entièrement libre</strong>. Si vous avez une préférence pour un autre producteur, une maison que vous affectionnez particulièrement, ou une espèce bien spécifique que vous souhaitez mettre à l'honneur, nous nous adaptons à votre désir avec le même soin. Chaque détail est pensé pour vous.
+</p>
+<p class="body" style="margin-top:16px;margin-bottom:0">
+     Nos experts vous accompagnent dans votre sélection selon la saison, le thème de votre réception et vos accords mets &amp; champagne.
+</p>
+<div class="neuvic-badge-big" style="margin-top:32px">
+<span class="nb-icon">🏅</span>
+<div class="nb-text">
+<strong>Caviar de Neuvic</strong>
+       Producteur français d'excellence · Dordogne
+</div>
+</div>
+</div>
+<div class="caviar-cards">
+<div class="cav-card">
+<div class="cav-card-accent"></div>
+<div class="cav-card-body">
+<p class="cav-card-latin">Acipenser Baerii</p>
+<h3 class="cav-card-name">Baerii Signature</h3>
+<p class="cav-card-desc">Douceur iodée, grains soyeux, finale fraîche et persistante. L'entrée en matière idéale pour initier vos invités.</p>
+<div class="cav-card-stars">
+<span class="star on">★</span><span class="star on">★</span><span class="star on">★</span>
+<span class="star">★</span><span class="star">★</span>
+</div>
+</div>
+</div>
+<div class="cav-card">
+<div class="cav-card-accent"></div>
+<div class="cav-card-body">
+<p class="cav-card-latin">Acipenser Gueldenstaedtii</p>
+<h3 class="cav-card-name">Osciètre Royal</h3>
+<p class="cav-card-desc">Notes noisetées et beurre frais, grains ambrés et fermes. Le caractère et la finesse réunis. Notre best-seller.</p>
+<div class="cav-card-stars">
+<span class="star on">★</span><span class="star on">★</span><span class="star on">★</span>
+<span class="star on">★</span><span class="star">★</span>
+</div>
+</div>
+</div>
+<div class="cav-card">
+<div class="cav-card-accent"></div>
+<div class="cav-card-body">
+<p class="cav-card-latin">Acipenser Stellatus</p>
+<h3 class="cav-card-name">Sevruga d'Exception</h3>
+<p class="cav-card-desc">Grains fins aux reflets anthracite, intensité iodée prononcée et vivacité remarquable. Un caviar de caractère, le préféré des gastronomes les plus exigeants.</p>
+<div class="cav-card-stars">
+<span class="star on">★</span><span class="star on">★</span><span class="star on">★</span>
+<span class="star on">★</span><span class="star on">★</span>
+</div>
+</div>
+</div>
+<div class="cav-card">
+<div class="cav-card-accent"></div>
+<div class="cav-card-body">
+<p class="cav-card-latin">Huso Huso</p>
+<h3 class="cav-card-name">Beluga Impérial</h3>
+<p class="cav-card-desc">Le summum de la dégustation. Grains rares d'une onctuosité incomparable. Pour vos événements les plus prestigieux.</p>
+<div class="cav-card-stars">
+<span class="star on">★</span><span class="star on">★</span><span class="star on">★</span>
+<span class="star on">★</span><span class="star on">★</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="gold">
+
+<!-- ══ SUPPORTS ══ -->
+
+<div id="supports" class="supports-section">
+<div class="supports-inner r">
+<p class="label">Les supports</p>
+<h2 class="t">L'art de <em>déguster</em><br>autrement</h2>
+<p class="body">Du classique revisité à l'exclusivité absolue — chaque support est choisi pour sublimer le caviar et créer un moment mémorable.</p>
+<div class="supports-grid" style="margin-top:56px">
+
+```
+<div class="sup">
+<span class="sup-num">01</span>
+<span class="sup-emoji">🥞</span>
+<h3 class="sup-name">Blini Artisanal</h3>
+<p class="sup-desc">Le classique revisité. Nos blinis sont préparés selon une recette maison, dorés à la perfection, garnis de crème fraîche et de ciboulette. La référence élégante.</p>
+</div>
+
+<div class="sup">
+<span class="sup-num">02</span>
+<span class="sup-emoji">🍦</span>
+<h3 class="sup-name">Cornet de Glace Caviar</h3>
+<p class="sup-desc">Notre <strong style="color:var(--creme);font-weight:400">exclusivité absolue</strong> — un cornet en forme d'œuf de caviar, garni de crème citronnée et surmonté de caviar frais. Spectaculaire visuellement, inoubliable en bouche.</p>
+<div class="excl">
+<span class="excl-txt">✦ Exclusivité Maison Royal</span>
+</div>
+</div>
+
+<div class="sup">
+<span class="sup-num">03</span>
+<span class="sup-emoji">🥨</span>
+<h3 class="sup-name">Cracker au Sel de Guérande</h3>
+<p class="sup-desc">Notre support de prédilection — un cracker croustillant au <strong style="color:var(--creme);font-weight:400">sel de Guérande</strong>, dont la légère salinité et la texture aérienne laissent toute la place aux arômes du caviar. Neutre, élégant, parfait.</p>
+<div class="excl">
+<span class="excl-txt">✦ Support préféré de nos convives</span>
+</div>
+</div>
+
+<div class="sup">
+<span class="sup-num">04</span>
+<span class="sup-emoji">🍞</span>
+<h3 class="sup-name">Toast Brioché</h3>
+<p class="sup-desc">Brioche au beurre légèrement toastée, onctuosité du beurre Bordier, caviar. Un accord généreux qui ravit les palais novices comme experts.</p>
+</div>
+
+<div class="sup">
+<span class="sup-num">05</span>
+<span class="sup-emoji">🥄</span>
+<h3 class="sup-name">Cuillère Nacre Pure</h3>
+<p class="sup-desc">L'expérience brute et absolue — le caviar seul, servi sur une cuillère en nacre. Rien ne vient altérer les arômes. Pour les connaisseurs qui veulent l'essentiel.</p>
+</div>
+
+<div class="sup">
+<span class="sup-num">06</span>
+<span class="sup-emoji">✨</span>
+<h3 class="sup-name">Création Sur-Mesure</h3>
+<p class="sup-desc">Vous avez une vision ? Nous la réalisons. Support thématique, accord inédit, concept culinaire propre à votre événement — nos équipes créent avec vous.</p>
+<div class="excl">
+<span class="excl-txt">✦ Sur commande</span>
+</div>
+</div>
+
+</div>
+```
+
+</div>
+</div>
+
+<!-- ══ TENUES ══ -->
+
+<div class="tenues-section">
+<div class="tenues-inner r">
+<p class="label">L'identité visuelle</p>
+<h2 class="t">Des tenues<br><em>accordées</em><br>à votre thème</h2>
+<p class="body">Chaque détail compte. Nos équipes peuvent adapter leur tenue à l'identité chromatique, au dress code et à l'atmosphère de votre événement.</p>
+<div class="tenues-grid">
+<div class="tenue">
+<div class="tenue-swatch" style="background:#0A0A0A;box-shadow:0 0 0 1px rgba(196,167,107,.3)"></div>
+<h3 class="tenue-name">Noir Absolu</h3>
+<p class="tenue-desc">La tenue signature. Élégance maximale, parfaite pour les soirées de prestige et galas.</p>
+</div>
+<div class="tenue">
+<div class="tenue-swatch" style="background:#F8F4EC;box-shadow:0 0 0 1px rgba(196,167,107,.3)"></div>
+<h3 class="tenue-name">Blanc Immaculé</h3>
+<p class="tenue-desc">Fraîcheur et lumière. Idéal pour les mariages, événements en extérieur et rooftops.</p>
+</div>
+<div class="tenue">
+<div class="tenue-swatch" style="background:#C4A76B"></div>
+<h3 class="tenue-name">Or & Champagne</h3>
+<p class="tenue-desc">Le luxe incarné. Pour les célébrations les plus fastueuses et les soirées de gala.</p>
+</div>
+<div class="tenue">
+<div class="tenue-swatch" style="background:linear-gradient(135deg,#1A1A2E,#16213E)"></div>
+<h3 class="tenue-name">Marine Royal</h3>
+<p class="tenue-desc">Sophistication navale. Parfait pour les événements yacht et les soirées en bord de mer.</p>
+</div>
+</div>
+<p class="tenues-note" style="margin-top:28px;font-size:12.5px;color:var(--muted);font-style:italic">
+     ✦ Toute autre couleur ou code vestimentaire spécifique est réalisable sur demande.
+</p>
+</div>
+</div>
+
+<hr class="gold">
+
+<!-- ══ CEINTURE ══ -->
+
+<div class="belt-section r">
+<div class="belt-visual">
+<svg class="belt-svg" viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="8" y="25" width="204" height="20" rx="3" fill="rgba(196,167,107,0.08)" stroke="rgba(196,167,107,0.5)" stroke-width="1"/>
+<rect x="32" y="16" width="28" height="38" rx="2" fill="rgba(196,167,107,0.08)" stroke="rgba(196,167,107,0.5)" stroke-width="1"/>
+<rect x="96" y="16" width="28" height="38" rx="2" fill="rgba(196,167,107,0.08)" stroke="rgba(196,167,107,0.5)" stroke-width="1"/>
+<rect x="160" y="16" width="28" height="38" rx="2" fill="rgba(196,167,107,0.08)" stroke="rgba(196,167,107,0.5)" stroke-width="1"/>
+<circle cx="110" cy="35" r="8" fill="rgba(196,167,107,0.15)" stroke="rgba(196,167,107,0.7)" stroke-width="1"/>
+<circle cx="110" cy="35" r="3" fill="rgba(196,167,107,0.6)"/>
+<line x1="32" y1="35" x2="8" y2="35" stroke="rgba(196,167,107,0.4)" stroke-width="1"/>
+<line x1="188" y1="35" x2="212" y2="35" stroke="rgba(196,167,107,0.4)" stroke-width="1"/>
+</svg>
+<p class="belt-caption">La ceinture de service sur mesure —<br>signature et âme de Maison Royal</p>
+<div class="belt-tags">
+<span class="btag">Cuir pleine fleur</span>
+<span class="btag">Créée sur mesure</span>
+<span class="btag">Tout-en-un</span>
+<span class="btag">Signature MRC</span>
+</div>
+</div>
+<div>
+<p class="label">Notre signature</p>
+<h2 class="t">La ceinture<br>de <em>service</em></h2>
+<p class="body">
+     C'est l'invention qui change tout. Nos Caviar Girls &amp; Boys portent une ceinture de cuir fabriquée sur mesure qui contient l'intégralité du nécessaire : le caviar, les supports, les cuillères en nacre, les garnitures, les serviettes.
+</p>
+<p class="body" style="margin-top:18px">
+     Résultat : <strong style="color:var(--creme);font-weight:400">un service fluide, silencieux, élégant</strong>, sans table, sans chariot, sans rupture dans la magie de votre événement. Nos équipes se fondent dans la scénographie et deviennent elles-mêmes une pièce du spectacle.
+</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-top:36px">
+<div style="display:flex;align-items:center;gap:14px">
+<div style="width:1px;height:40px;background:var(--or)"></div>
+<p style="font-size:13px;color:var(--silver);line-height:1.7">Aucun matériel visible — l'élégance avant tout</p>
+</div>
+<div style="display:flex;align-items:center;gap:14px">
+<div style="width:1px;height:40px;background:var(--or)"></div>
+<p style="font-size:13px;color:var(--silver);line-height:1.7">Service en continu auprès de tous vos convives</p>
+</div>
+<div style="display:flex;align-items:center;gap:14px">
+<div style="width:1px;height:40px;background:var(--or)"></div>
+<p style="font-size:13px;color:var(--silver);line-height:1.7">Un spectacle vivant à chaque dégustation</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ══ BOÎTES ══ -->
+
+<section class="boites-section r">
+<div class="boites-card">
+<div>
+<p class="boites-label">L'objet d'exception</p>
+<h2 class="boites-title">La boîte<br><em>collector</em><br>10g</h2>
+<p class="boites-desc">
+       Offrez à chacun de vos convives une mini-boîte de 10g de caviar d'exception, entièrement personnalisée à votre image. Votre logo, votre message, vos couleurs, votre espèce de prédilection. Un souvenir gastronomique d'élite qui prolonge l'émotion bien après la soirée.
+</p>
+<a class="btn-gold" href="tel:+33775788348" style="font-size:9.5px">Nous contacter</a>
+</div>
+<div class="boites-specs">
+<div class="spec">
+<div class="spec-box">🏷️</div>
+<div class="spec-text">
+<strong>Identité complète</strong>
+<span>Logo, couleurs, typographie personnalisés</span>
+</div>
+</div>
+<div class="spec">
+<div class="spec-box">✍️</div>
+<div class="spec-text">
+<strong>Message sur mesure</strong>
+<span>Votre texte imprimé, calligraphié sur demande</span>
+</div>
+</div>
+<div class="spec">
+<div class="spec-box">🎀</div>
+<div class="spec-text">
+<strong>Packaging luxe</strong>
+<span>Ruban, écrin, étiquette de cire scellée</span>
+</div>
+</div>
+<div class="spec">
+<div class="spec-box">🖤</div>
+<div class="spec-text">
+<strong>Caviar premium · 10g</strong>
+<span>Espèce choisie librement selon vos préférences</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ══ PERSONNALISATION ══ -->
+
+<div id="personnalisation" class="custom-section">
+<div class="custom-inner r">
+<p class="label">Sur-mesure total</p>
+<h2 class="t">Tout est<br><em>entièrement<br>personnalisable</em></h2>
+<p class="body">Votre événement est unique. Votre expérience caviar doit l'être aussi. Voici ce que vous pouvez ajuster à votre convenance.</p>
+<div class="custom-grid">
+<div class="col">
+<h3 class="col-h">🖤 Le Caviar</h3>
+<div class="opt"><div class="bull"></div><p class="opt-t">Choix libre de l'espèce et du producteur selon vos préférences</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Partenariat privilégié Caviar de Neuvic · bio · Dordogne, France</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Quantité adaptée à votre nombre de convives</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Accord mets, champagne &amp; vins conseillé par nos experts</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Présentation (boîte, timbale, service à la nacre)</p></div>
+</div>
+<div class="col">
+<h3 class="col-h">🥂 Le Service</h3>
+<div class="opt"><div class="bull"></div><p class="opt-t">Support de dégustation : blini, cornet, brioche, nacre…</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Tenues adaptées à votre code couleur &amp; dress code</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Nombre de Caviar Girls &amp; Boys selon l'envergure</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Timing &amp; séquençage du service dans la soirée</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Garnitures &amp; accompagnements personnalisés</p></div>
+</div>
+<div class="col">
+<h3 class="col-h">📦 Les Extras</h3>
+<div class="opt"><div class="bull"></div><p class="opt-t">Boîtes collector 10g à votre image pour chaque convive</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Animation pédagogique : présentation des espèces &amp; origines</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Accord champagne &amp; spiritueux de prestige</p></div>
+<div class="opt"><div class="bull"></div><p class="opt-t">Création d'un support de dégustation inédit sur mesure</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ══ ÉVÉNEMENTS ══ -->
+
+<section class="events-section r">
+<p class="label">Nos terrains de jeu</p>
+<h2 class="t">Pour quel<br><em>événement ?</em></h2>
+<div class="events-grid">
+<div class="ev">
+<div class="ev-bg"></div>
+<div class="ev-content">
+<span class="ev-icon">💍</span>
+<h3 class="ev-name">Mariages</h3>
+<p class="ev-desc">L'animation gastronomique qui marque les esprits de tous vos convives.</p>
+</div>
+</div>
+<div class="ev">
+<div class="ev-bg"></div>
+<div class="ev-content">
+<span class="ev-icon">🥂</span>
+<h3 class="ev-name">Galas & Soirées</h3>
+<p class="ev-desc">Cocktails, galas, soirées de prestige — nous apportons le spectacle.</p>
+</div>
+</div>
+<div class="ev">
+<div class="ev-bg"></div>
+<div class="ev-content">
+<span class="ev-icon">🏢</span>
+<h3 class="ev-name">Corporate & Marques</h3>
+<p class="ev-desc">Lancement de produit, incentive, réception client — l'expérience qui impressionne.</p>
+</div>
+</div>
+<div class="ev">
+<div class="ev-bg"></div>
+<div class="ev-content">
+<span class="ev-icon">⛵</span>
+<h3 class="ev-name">Yachts & Privatifs</h3>
+<p class="ev-desc">En mer, en rooftop, en villa — notre service mobile s'adapte à tout contexte.</p>
+</div>
+</div>
+<div class="ev">
+<div class="ev-bg"></div>
+<div class="ev-content">
+<span class="ev-icon">🎊</span>
+<h3 class="ev-name">Fêtes Privées</h3>
+<p class="ev-desc">Anniversaires, fêtes exclusives, réceptions intimes — chaque occasion mérite le meilleur.</p>
+</div>
+</div>
+<div class="ev" style="background:var(--noir3);border-color:rgba(196,167,107,.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:28px;text-align:center">
+<span style="font-size:32px">✦</span>
+<p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--or-lt)">Votre événement est unique</p>
+<p style="font-size:12px;color:var(--muted);line-height:1.7">Contactez-nous pour un projet sur mesure.</p>
+<a class="btn-outline" href="tel:+33775788348" style="font-size:9px;margin-top:8px">Nous écrire</a>
+</div>
+</div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+
+<div class="process-section">
+<div class="process-inner r">
+<p class="label">Comment ça se passe</p>
+<h2 class="t">De votre brief<br>au <em>service</em></h2>
+<div class="process-row">
+<div class="step">
+<div class="step-ring">I</div>
+<p class="step-lbl">Échange &amp;<br>brief de l'événement</p>
+</div>
+<div class="step">
+<div class="step-ring">II</div>
+<p class="step-lbl">Sélection caviar,<br>support &amp; extras</p>
+</div>
+<div class="step">
+<div class="step-ring">III</div>
+<p class="step-lbl">Personnalisation<br>tenues &amp; boîtes</p>
+</div>
+<div class="step">
+<div class="step-ring">IV</div>
+<p class="step-lbl">Validation &amp;<br>confirmation</p>
+</div>
+<div class="step">
+<div class="step-ring">V</div>
+<p class="step-lbl">Service mobile<br>le jour J</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ══ FOOTER CTA ══ -->
+
+<div class="footer-cta r">
+
+<p class="ft">Prêt à offrir à vos invités<br>une expérience <span>inoubliable ?</span></p>
+<p class="ft-sub">Notre équipe vous répond sous 24h pour construire votre offre sur mesure.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a class="btn-gold" href="tel:+33775788348">Envoyer un message</a>
+<a class="btn-outline" href="https://wa.me/33775788348" target="_blank">WhatsApp</a>
+</div>
+<div class="footer-contacts">
+<div class="fc">
+<span class="fc-lbl">Adresse</span>
+<p class="fc-val">178 Bd Haussmann, 75008 Paris</p>
+</div>
+<div class="fc">
+<span class="fc-lbl">Téléphone</span>
+<a class="fc-val" href="tel:+33775788348">+33 7 75 78 83 48</a>
+</div>
+<div class="fc">
+<span class="fc-lbl">Email</span>
+<a class="fc-val" href="mailto:contact@maisonroyalcaviar.com">contact@maisonroyalcaviar.com</a>
+</div>
+<div class="fc">
+<span class="fc-lbl">Instagram</span>
+<a class="fc-val" href="https://www.instagram.com/maisonroyalcaviar/" target="_blank">@maisonroyalcaviar</a>
+</div>
+</div>
+</div>
+
+<div class="footer-bot">
+
+<p>© 2025 Maison Royal Caviar · SASU · Paris, France · Tous droits réservés</p>
+</div>
+
+<!-- ══ MOBILE BOTTOM BAR ══ -->
+
+<nav class="mob-bar">
+<a href="#concept">
+<span class="mb-icon">✦</span>
+   Concept
+</a>
+<a href="#caviar">
+<span class="mb-icon">🖤</span>
+   Caviar
+</a>
+<a href="#supports">
+<span class="mb-icon">🍦</span>
+   Supports
+</a>
+<a href="#personnalisation">
+<span class="mb-icon">🎨</span>
+   Sur-mesure
+</a>
+<a class="cta-mob" href="tel:+33775788348">
+<span class="mb-icon">✉️</span>
+   Contact
+</a>
+</nav>
+
+<script>
+// ── Scroll reveal ──
+// Add hidden class only via JS so if JS fails, content is visible
+document.querySelectorAll('.r').forEach(el => {
+ const rect = el.getBoundingClientRect();
+ // Only hide elements below the fold
+ if (rect.top > window.innerHeight) {
+   el.classList.add('hidden');
+ }
+});
+
+const obs = new IntersectionObserver(entries => {
+ entries.forEach(e => {
+   if(e.isIntersecting){
+     e.target.classList.remove('hidden');
+     e.target.classList.add('in');
+     obs.unobserve(e.target);
+   }
+ });
+}, { threshold: 0.06, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// ── Accordion sur-mesure (mobile uniquement) ──
+function isMob(){ return window.innerWidth <= 700; }
+
+// Wrap .opt items dans .col-body/.col-body-inner
+document.querySelectorAll('.col').forEach(col => {
+ if (col.querySelector('.col-body')) return; // déjà wrappé
+ const opts = [...col.querySelectorAll('.opt')];
+ if (!opts.length) return;
+ const inner = document.createElement('div');
+ inner.className = 'col-body-inner';
+ opts.forEach(o => inner.appendChild(o));
+ const body = document.createElement('div');
+ body.className = 'col-body';
+ body.appendChild(inner);
+ col.appendChild(body);
+});
+
+// Ouvrir le premier par défaut sur mobile
+if (isMob()) {
+ const first = document.querySelector('.col');
+ if (first) first.classList.add('open');
+}
+
+document.querySelectorAll('.col-h').forEach(h => {
+ h.addEventListener('click', () => {
+   if (!isMob()) return;
+   const col = h.parentElement;
+   const wasOpen = col.classList.contains('open');
+   document.querySelectorAll('.col').forEach(c => c.classList.remove('open'));
+   if (!wasOpen) col.classList.add('open');
+ });
+});
+
+// ── Active nav bar en scroll ──
+const navSections = ['concept','caviar','supports','personnalisation'];
+const mobLinks = document.querySelectorAll('.mob-bar a[href^="#"]');
+
+function updateNav() {
+ if (!isMob()) return;
+ const scrollY = window.scrollY + window.innerHeight * 0.3;
+ let current = navSections[0];
+ navSections.forEach(id => {
+   const el = document.getElementById(id);
+   if (el && el.offsetTop <= scrollY) current = id;
+ });
+ mobLinks.forEach(a => {
+   a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+ });
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+updateNav();
+
+// ── Feedback tactile sur les boutons ──
+document.querySelectorAll('.btn-gold, .btn-outline, .mob-bar a').forEach(btn => {
+ btn.addEventListener('touchstart', () => {
+   btn.style.opacity = '.75';
+ }, {passive:true});
+ btn.addEventListener('touchend', () => {
+   btn.style.opacity = '';
+ }, {passive:true});
+});
+</script>
+
+</body>
+</html>
