@@ -283,29 +283,29 @@ font-size:22px;font-weight:300;margin-bottom:6px;
 font-size:10px;letter-spacing:.2em;font-style:italic;
 color:var(--or);text-transform:uppercase;margin-bottom:10px;
 }
-.cav-card-desc{font-size:12px;line-height:1.8;color:var(--muted)}
+.cav-card-desc{font-size:12px;line-height:1.8;color:var(--silver)}
 .cav-card-stars{display:flex;gap:4px;margin-top:10px}
 .star{font-size:9px;color:var(--or-dk)}
 .star.on{color:var(--or)}
 
 /* ══ SUPPORTS ══ */
 .supports-section{
-background:var(--noir2);
+background:var(--noir);
 padding:100px 60px;
 }
 .supports-inner{max-width:1160px;margin:0 auto}
 .supports-grid{
 display:grid;grid-template-columns:repeat(3,1fr);
-gap:2px;margin-top:56px;
-background:rgba(196,167,107,.1);
+gap:1px;margin-top:56px;
+background:rgba(196,167,107,.15);
 }
 .sup{
-background:var(--noir3);
+background:var(--noir);
 padding:48px 40px;
 position:relative;overflow:hidden;
 transition:background .35s;
 }
-.sup:hover{background:#141209}
+.sup:hover{background:rgba(196,167,107,.07)}
 .sup::before{
 content:’’;
 position:absolute;top:0;left:0;right:0;height:2px;
@@ -326,7 +326,9 @@ line-height:1;transition:color .35s;
 font-family:‘Cormorant Garamond’,serif;
 font-size:26px;font-weight:300;margin-bottom:14px;line-height:1.2;
 }
-.sup-desc{font-size:12.5px;line-height:1.9;color:var(--muted)}
+.sup-desc{font-size:12.5px;line-height:1.9;color:var(--silver)}
+.sup:hover .sup-name{color:var(--creme)}
+.sup:hover .sup-desc{color:var(--creme2)}
 
 /* EXCLUSIVITE BADGE */
 .excl{
@@ -346,7 +348,7 @@ display:grid;grid-template-columns:1fr 1fr;
 gap:80px;align-items:center;
 }
 .belt-visual{
-background:var(--noir3);
+background:var(--noir);
 border:1px solid rgba(196,167,107,.15);
 height:460px;
 display:flex;flex-direction:column;
@@ -378,21 +380,21 @@ color:var(--or-lt);padding:5px 12px;
 
 /* ══ TENUES ══ */
 .tenues-section{
-background:var(--noir2);padding:100px 60px;
+background:var(--noir);padding:100px 60px;
 }
 .tenues-inner{max-width:1160px;margin:0 auto}
 .tenues-grid{
 display:grid;grid-template-columns:repeat(4,1fr);
-gap:2px;margin-top:56px;
-background:rgba(196,167,107,.1);
+gap:1px;margin-top:56px;
+background:rgba(196,167,107,.15);
 }
 .tenue{
-background:var(--noir3);
+background:var(--noir);
 padding:40px 32px;
 text-align:center;
-transition:background .3s;
+transition:background .3s, color .3s;
 }
-.tenue:hover{background:#141209}
+.tenue:hover{background:rgba(196,167,107,.07)}
 .tenue-swatch{
 width:56px;height:56px;border-radius:50%;
 margin:0 auto 20px;
@@ -404,7 +406,9 @@ transition:border-color .3s;
 font-family:‘Cormorant Garamond’,serif;
 font-size:20px;font-weight:300;margin-bottom:10px;
 }
-.tenue-desc{font-size:11.5px;line-height:1.8;color:var(--muted)}
+.tenue-desc{font-size:11.5px;line-height:1.8;color:var(--silver)}
+.tenue:hover .tenue-name{color:var(--creme)}
+.tenue:hover .tenue-desc{color:var(--creme2)}
 
 /* ══ BOITES ══ */
 .boites-section{max-width:1160px;margin:0 auto;padding:0 60px 100px}
@@ -449,7 +453,7 @@ color:var(--creme);letter-spacing:.04em;margin-bottom:3px;
 
 /* ══ CUSTOM ══ */
 .custom-section{
-background:var(--noir2);padding:100px 60px;
+background:var(--noir);padding:100px 60px;
 }
 .custom-inner{max-width:1160px;margin:0 auto}
 .custom-grid{
@@ -457,7 +461,7 @@ display:grid;grid-template-columns:repeat(3,1fr);
 gap:2px;margin-top:56px;
 background:rgba(196,167,107,.1);
 }
-.col{background:var(--noir3);padding:48px 40px}
+.col{background:var(--noir);padding:48px 40px}
 .col-h{
 font-family:‘Cormorant Garamond’,serif;
 font-size:24px;font-weight:300;
@@ -513,7 +517,7 @@ font-size:24px;font-weight:300;margin-bottom:8px;
 
 /* ══ PROCESS ══ */
 .process-section{
-background:var(--noir2);padding:100px 60px;
+background:var(--noir);padding:100px 60px;
 }
 .process-inner{max-width:1160px;margin:0 auto}
 .process-row{
@@ -528,7 +532,7 @@ background:linear-gradient(to right,transparent,rgba(196,167,107,.35),transparen
 .step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px}
 .step-ring{
 width:42px;height:42px;border-radius:50%;
-border:1px solid var(--or);background:var(--noir2);
+border:1px solid var(--or);background:var(--noir);
 display:flex;align-items:center;justify-content:center;
 font-family:‘Cormorant Garamond’,serif;
 font-size:16px;color:var(--or);
@@ -564,7 +568,7 @@ gap:60px;flex-wrap:wrap;margin-top:48px;
 .fc-val{font-size:14px;color:var(--or-lt);text-decoration:none;letter-spacing:.04em}
 
 .footer-bot{
-background:var(--noir2);
+background:var(--noir);
 border-top:1px solid rgba(196,167,107,.12);
 padding:36px 60px;
 display:flex;align-items:center;justify-content:space-between;
@@ -811,7 +815,7 @@ scrollbar-width:none;-ms-overflow-style:none;
 .sup{
 flex:0 0 240px;
 padding:32px 26px;
-background:var(--noir3);
+background:var(--noir);
 }
 .sup-num{font-size:52px;top:10px;right:14px}
 .sup-name{font-size:21px}
@@ -822,7 +826,7 @@ background:var(--noir3);
 content:’’;
 position:absolute;right:0;top:0;bottom:0;
 width:40px;
-background:linear-gradient(to right,transparent,var(--noir2));
+background:linear-gradient(to right,transparent,var(--noir));
 pointer-events:none;
 }
 
@@ -845,7 +849,7 @@ scrollbar-width:none;-ms-overflow-style:none;
 .tenue{
 flex:0 0 190px;
 padding:32px 22px;
-background:var(--noir3);
+background:var(--noir);
 }
 .tenue-swatch{width:48px;height:48px;margin-bottom:16px}
 .tenue-name{font-size:18px;margin-bottom:8px}
@@ -955,7 +959,7 @@ gap:20px;padding:0 0 36px 0;
 .step:last-child{padding-bottom:0}
 .step-ring{
 flex-shrink:0;margin-bottom:0;
-background:var(--noir2);
+background:var(--noir);
 position:relative;z-index:1;
 width:42px;height:42px;font-size:15px;
 }
@@ -1509,7 +1513,7 @@ animation:caviarPulse 2s ease-in-out infinite;
 <p class="ev-desc">Anniversaires, fêtes exclusives, réceptions intimes — chaque occasion mérite le meilleur.</p>
 </div>
 </div>
-<div class="ev" style="background:var(--noir3);border-color:rgba(196,167,107,.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:28px;text-align:center">
+<div class="ev" style="background:var(--noir);border-color:rgba(196,167,107,.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:28px;text-align:center">
 <span style="font-size:32px">✦</span>
 <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--or-lt)">Votre événement est unique</p>
 <p style="font-size:12px;color:var(--muted);line-height:1.7">Contactez-nous pour un projet sur mesure.</p>
