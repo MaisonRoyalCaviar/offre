@@ -1590,29 +1590,30 @@ hr.gold{
 </nav>
 
 <script>
-// ── Scroll reveal ──
-// Add hidden class only via JS so if JS fails, content is visible
-document.querySelectorAll('.r').forEach(el => {
-  const rect = el.getBoundingClientRect();
-  // Only hide elements below the fold
-  if (rect.top > window.innerHeight) {
-    el.classList.add('hidden');
-  }
-});
+// ── Scroll reveal (desktop only) ──
+function isMob(){ return window.innerWidth <= 700; }
 
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.classList.remove('hidden');
-      e.target.classList.add('in');
-      obs.unobserve(e.target);
+if (!isMob()) {
+  document.querySelectorAll('.r').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top > window.innerHeight) {
+      el.classList.add('hidden');
     }
   });
-}, { threshold: 0.06, rootMargin:'0px 0px -40px 0px' });
-document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.remove('hidden');
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+}
 
 // ── Accordion sur-mesure (mobile uniquement) ──
-function isMob(){ return window.innerWidth <= 700; }
 
 // Wrap .opt items dans .col-body/.col-body-inner
 document.querySelectorAll('.col').forEach(col => {
