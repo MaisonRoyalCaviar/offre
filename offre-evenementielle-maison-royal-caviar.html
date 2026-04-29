@@ -80,7 +80,7 @@ nav{
   overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
+  position:absolute;inset:0;z-index:0;
   background:linear-gradient(160deg, #0D0A05 0%, #1C1508 40%, #080808 100%);
 }
 .hero-bg::after{
@@ -89,7 +89,7 @@ nav{
     radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196,167,107,.04) 0%, transparent 70%);
 }
 .hero-content{position:relative;z-index:2;max-width:700px}
-.hero-pill{
+.hero-pill{position:relative;z-index:2;
   display:inline-flex;align-items:center;gap:10px;
   border:1px solid rgba(196,167,107,.3);
   padding:8px 18px;margin-bottom:40px;
@@ -97,10 +97,10 @@ nav{
   opacity:1;
 }
 
-.hero-pill-dot{width:5px;height:5px;border-radius:50%;background:var(--or);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-pill-dot{width:5px;height:5px;border-radius:50%;background:var(--or);opacity:1}
 
-.hero-title{
+
+.hero-title{position:relative;z-index:2;
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(64px,9vw,130px);
   font-weight:300;line-height:.88;
@@ -1061,7 +1061,7 @@ hr.gold{
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-content" style="padding-top:90px;opacity:1;visibility:visible;">
+  <div class="hero-content" style="padding-top:90px;opacity:1;visibility:visible;position:relative;z-index:2;">
     <div class="hero-pill">
       <span class="hero-pill-dot"></span>
       Présentation exclusive · Maison Royal Caviar
