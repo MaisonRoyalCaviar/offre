@@ -395,9 +395,12 @@ hr.gold{
   width:56px;height:56px;border-radius:50%;
   margin:0 auto 20px;
   border:2px solid rgba(196,167,107,.2);
-  transition:border-color .3s;
+  transition:border-color .3s, box-shadow .3s;
 }
-.tenue:hover .tenue-swatch{border-color:var(--or)}
+.tenue:hover .tenue-swatch{
+  border-color:var(--or);
+  box-shadow:0 0 0 3px rgba(196,167,107,.35) !important;
+}
 .tenue-name{
   font-family:'Cormorant Garamond',serif;
   font-size:20px;font-weight:300;margin-bottom:10px;
@@ -1047,7 +1050,7 @@ hr.gold{
 
 <!-- ══ NAV ══ -->
 <nav>
-  <a class="nav-logo" href="https://www.maisonroyalcaviar.com" target="_blank">
+  <a class="nav-logo" href="https://www.maisonroyalcaviar.com" target="_blank" rel="noopener noreferrer">
     <img src="https://static.wixstatic.com/media/97c303_ba998fe0f4c74ebaac3f10e5ed73355c~mv2.jpg/v1/crop/x_0,y_39,w_1180,h_1277/fill/w_120,h_130,al_c,q_85,enc_avif,quality_auto/Logo%20Maison%20Royal%20Caviar%20%C3%A9crit_edited_jp.jpg" alt="Maison Royal Caviar">
   </a>
   <ul class="nav-links">
@@ -1280,7 +1283,7 @@ hr.gold{
         <p class="tenue-desc">Fraîcheur et lumière. Idéal pour les mariages, événements en extérieur et rooftops.</p>
       </div>
       <div class="tenue">
-        <div class="tenue-swatch" style="background:#C4A76B"></div>
+        <div class="tenue-swatch" style="background:#C4A76B;box-shadow:0 0 0 1px rgba(196,167,107,.3)"></div>
         <h3 class="tenue-name">Or & Champagne</h3>
         <p class="tenue-desc">Le luxe incarné. Pour les célébrations les plus fastueuses et les soirées de gala.</p>
       </div>
@@ -1514,7 +1517,7 @@ hr.gold{
   <p class="ft-sub">Notre équipe vous répond sous 24h pour construire votre offre sur mesure.</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
     <a class="btn-gold" href="tel:+33775788348">Envoyer un message</a>
-    <a class="btn-outline" href="https://wa.me/33775788348" target="_blank">WhatsApp</a>
+    <a class="btn-outline" href="https://wa.me/33775788348" target="_blank" rel="noopener noreferrer">WhatsApp</a>
   </div>
   <div class="footer-contacts">
     <div class="fc">
@@ -1531,7 +1534,7 @@ hr.gold{
     </div>
     <div class="fc">
       <span class="fc-lbl">Instagram</span>
-      <a class="fc-val" href="https://www.instagram.com/maisonroyalcaviar/" target="_blank">@maisonroyalcaviar</a>
+      <a class="fc-val" href="https://www.instagram.com/maisonroyalcaviar/" target="_blank" rel="noopener noreferrer">@maisonroyalcaviar</a>
     </div>
   </div>
 </div>
@@ -1600,8 +1603,15 @@ document.querySelectorAll('.col-h').forEach(h => {
 
 // ── Active nav bar en scroll ──
 const navSections = ['concept','caviar','supports','personnalisation'];
-const mobLinks = document.querySelectorAll(');
-  mobLinks.forEach(a => {
+const navLinks = document.querySelectorAll('.nav-links a');
+function updateNav(){
+  const y = window.scrollY + 120;
+  let current = navSections[0];
+  for (const id of navSections) {
+    const sec = document.getElementById(id);
+    if (sec && sec.offsetTop <= y) current = id;
+  }
+  navLinks.forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
 }
@@ -1609,7 +1619,10 @@ window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
 
 // ── Feedback tactile sur les boutons ──
-document.querySelectorAll('.btn-gold, .btn-outline, , {passive:true});
+document.querySelectorAll('.btn-gold, .btn-outline, .nav-cta').forEach(btn => {
+  btn.addEventListener('touchstart', () => {
+    btn.style.opacity = '0.75';
+  }, {passive:true});
   btn.addEventListener('touchend', () => {
     btn.style.opacity = '';
   }, {passive:true});
