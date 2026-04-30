@@ -624,13 +624,71 @@ hr.gold{
     z-index:1000;
     padding:12px 20px;
     background:linear-gradient(to bottom,rgba(8,8,8,.82) 0%,transparent 100%);
-    -webkit-backdrop-filter:blur(0px);
-    backdrop-filter:blur(0px);
     border-bottom:none;
     transition:background .4s;
   }
   .nav-links,.nav-cta{display:none}
   .nav-logo img{height:38px}
+
+  /* ── HAMBURGER ── */
+  .nav-burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:36px;height:36px;padding:4px;
+    background:none;border:none;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .nav-burger span{
+    display:block;width:22px;height:1px;
+    background:var(--or-lt);
+    transition:transform .35s ease, opacity .25s ease;
+    transform-origin:center;
+  }
+  nav.open .nav-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  nav.open .nav-burger span:nth-child(2){opacity:0}
+  nav.open .nav-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  /* ── OVERLAY MENU ── */
+  .mob-menu{
+    display:flex;
+    position:fixed;inset:0;z-index:999;
+    background:rgba(8,8,8,.97);
+    flex-direction:column;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .mob-menu.open{opacity:1;pointer-events:auto}
+  .mob-menu-inner{
+    display:flex;flex-direction:column;align-items:center;
+    gap:8px;width:100%;padding:0 40px;
+  }
+  .mob-link{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(28px,8vw,42px);
+    font-weight:300;font-style:italic;
+    color:var(--creme);text-decoration:none;letter-spacing:.04em;
+    padding:12px 0;width:100%;text-align:center;
+    border-bottom:1px solid rgba(196,167,107,.1);
+    transition:color .25s;
+    opacity:0;transform:translateY(16px);
+    transition:color .25s, opacity .4s ease, transform .4s ease;
+  }
+  .mob-menu.open .mob-link{opacity:1;transform:translateY(0)}
+  .mob-menu.open .mob-link:nth-child(1){transition-delay:.05s}
+  .mob-menu.open .mob-link:nth-child(2){transition-delay:.1s}
+  .mob-menu.open .mob-link:nth-child(3){transition-delay:.15s}
+  .mob-menu.open .mob-link:nth-child(4){transition-delay:.2s}
+  .mob-link:hover,.mob-link:active{color:var(--or-lt)}
+  .mob-cta{
+    font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+    color:var(--or-lt);text-decoration:none;
+    border:1px solid rgba(196,167,107,.4);
+    padding:14px 32px;margin-top:28px;
+    transition:background .3s,color .3s;
+    opacity:0;transform:translateY(16px);
+    transition:background .3s, color .3s, opacity .4s ease .25s, transform .4s ease .25s;
+  }
+  .mob-menu.open .mob-cta{opacity:1;transform:translateY(0)}
+  .mob-cta:active{background:var(--or);color:var(--noir)}
 
   /* ── BOTTOM NAV BAR — style app premium ── */
   
@@ -1169,7 +1227,21 @@ hr.gold{
     <li><a href="#personnalisation">Sur-mesure</a></li>
   </ul>
   <a class="nav-cta" href="tel:+33775788348">Nous contacter</a>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ══ MENU MOBILE OVERLAY ══ -->
+<div class="mob-menu" aria-hidden="true">
+  <nav class="mob-menu-inner">
+    <a href="#concept" class="mob-link">Le Concept</a>
+    <a href="#caviar" class="mob-link">Notre Caviar</a>
+    <a href="#supports" class="mob-link">Les Supports</a>
+    <a href="#personnalisation" class="mob-link">Sur-mesure</a>
+    <a href="tel:+33775788348" class="mob-cta">Nous contacter</a>
+  </nav>
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
@@ -1656,6 +1728,24 @@ hr.gold{
 
 
 <script>
+// ── Menu hamburger mobile ──
+const burger = document.querySelector('.nav-burger');
+const mobMenu = document.querySelector('.mob-menu');
+const nav = document.querySelector('nav');
+function toggleMenu(open){
+  nav.classList.toggle('open', open);
+  mobMenu.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  mobMenu.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+if(burger){
+  burger.addEventListener('click', () => toggleMenu(!mobMenu.classList.contains('open')));
+  document.querySelectorAll('.mob-link, .mob-cta').forEach(a => {
+    a.addEventListener('click', () => toggleMenu(false));
+  });
+}
+
 // ── Scroll reveal ──
 // Add hidden class only via JS so if JS fails, content is visible
 document.querySelectorAll('.r').forEach(el => {
