@@ -2,7 +2,11 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
 <title>Maison Royal Caviar — L'Offre Événementielle</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -30,6 +34,8 @@ body{
   font-weight:300;
   overflow-x:hidden;
   cursor:default;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
 }
 
 /* GRAIN */
@@ -1033,16 +1039,116 @@ hr.gold{
   .concept-css-visual{height:260px}
 }
 
-/* ══ FORCE TOUT VISIBLE MOBILE ══ */
+/* ══ FORCE CONTENU VISIBLE MOBILE (sans casser les animations utiles) ══ */
 @media(max-width:700px){
-  * {
-    animation:none !important;
-    opacity:1 !important;
-    visibility:visible !important;
-    transform:none !important;
-  }
   .r, .r.hidden { opacity:1 !important; transform:none !important; }
   body { padding-bottom: 0 !important; }
+}
+
+/* ══ iPHONE — SAFE AREA & NOTCH (iPhone X et +) ══ */
+@supports (padding:max(0px)) {
+  @media(max-width:700px){
+    nav{
+      padding-top:max(12px, env(safe-area-inset-top));
+      padding-left:max(20px, env(safe-area-inset-left));
+      padding-right:max(20px, env(safe-area-inset-right));
+    }
+    .hero{
+      padding-top:max(80px, calc(env(safe-area-inset-top) + 70px));
+      padding-left:max(24px, env(safe-area-inset-left));
+      padding-right:max(24px, env(safe-area-inset-right));
+    }
+    .concept > div:last-child,
+    .neuvic,
+    .belt-section > div:last-child,
+    .boites-section,
+    .custom-section,
+    .process-section,
+    .footer-cta{
+      padding-left:max(24px, env(safe-area-inset-left));
+      padding-right:max(24px, env(safe-area-inset-right));
+    }
+    .footer-cta{
+      padding-bottom:max(56px, calc(env(safe-area-inset-bottom) + 40px));
+    }
+    .footer-bot{
+      padding-left:max(24px, env(safe-area-inset-left));
+      padding-right:max(24px, env(safe-area-inset-right));
+      padding-bottom:max(22px, calc(env(safe-area-inset-bottom) + 12px));
+    }
+    .supports-inner,
+    .tenues-inner,
+    .events-section .label,
+    .events-section h2.t{
+      padding-left:max(24px, env(safe-area-inset-left));
+      padding-right:max(24px, env(safe-area-inset-right));
+    }
+  }
+}
+
+/* ══ iPHONE — PETITS ÉCRANS (iPhone 13 mini, SE, 13/14/15 Pro 390-393px) ══ */
+@media(max-width:430px){
+  .hero{padding-top:72px;padding-bottom:48px}
+  .hero-title{
+    font-size:clamp(48px,13.5vw,72px) !important;
+    line-height:.9;
+    letter-spacing:-.015em;
+  }
+  .hero-sub{font-size:9.5px;line-height:2.1;margin-top:18px}
+  .hero-pill{font-size:7px;letter-spacing:.3em;padding:6px 12px;margin-bottom:20px}
+  h2.t{font-size:clamp(28px,8.5vw,40px) !important;line-height:1.05}
+  .body{font-size:13px;line-height:1.95}
+  .label{font-size:7.5px;letter-spacing:.45em}
+  .btn-gold,.btn-outline{font-size:9.5px;letter-spacing:.3em;padding:16px 18px}
+  .nav-logo img{height:34px}
+  nav{padding:10px 16px}
+  /* Cartes scroll horizontal légèrement plus étroites */
+  .sup{flex:0 0 220px;padding:28px 22px}
+  .sup-name{font-size:19px}
+  .sup-desc{font-size:12px}
+  .tenue{flex:0 0 175px;padding:28px 20px}
+  .tenue-name{font-size:17px}
+  .tenue-desc{font-size:11px}
+  .ev{flex:0 0 200px;height:260px}
+  .ev-name{font-size:19px}
+  /* Caviar cards */
+  .cav-card-body{padding:18px 18px}
+  .cav-card-name{font-size:19px}
+  /* Concept */
+  .concept-img{height:72vw;max-height:340px}
+  .concept-quote{font-size:15px;padding:14px 16px}
+  /* Boîtes collector */
+  .boites-card{padding:32px 24px}
+  .boites-title{font-size:clamp(34px,10vw,46px)}
+  /* Process */
+  .step-ring{width:38px;height:38px;font-size:14px}
+  .step-lbl{font-size:12.5px}
+  /* Footer */
+  .footer-cta .ft{font-size:clamp(26px,7.5vw,36px)}
+  .footer-cta .ft-sub{font-size:12.5px}
+  .fc-val{font-size:14px}
+}
+
+/* ══ iPHONE — TRÈS PETITS ÉCRANS (iPhone SE 375px, 13 mini) ══ */
+@media(max-width:375px){
+  .hero{padding-left:18px;padding-right:18px;padding-top:68px}
+  .hero-title{font-size:clamp(42px,12vw,60px) !important}
+  .hero-sub{font-size:9px;letter-spacing:.18em}
+  h2.t{font-size:clamp(26px,8vw,36px) !important}
+  nav{padding:10px 14px}
+  .nav-logo img{height:32px}
+  .concept > div:last-child,
+  .neuvic,
+  .belt-section > div:last-child,
+  .boites-section,
+  .custom-section,
+  .process-section,
+  .footer-cta,
+  .supports-inner,
+  .tenues-inner{padding-left:18px;padding-right:18px}
+  .sup{flex:0 0 200px}
+  .tenue{flex:0 0 160px}
+  .ev{flex:0 0 185px;height:240px}
 }
 </style>
 </head>
